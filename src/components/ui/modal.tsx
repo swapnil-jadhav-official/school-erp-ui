@@ -16,19 +16,19 @@ interface ModalProps {
 }
 
 const sizeMap = {
-  sm: 'max-w-md',
-  md: 'max-w-lg',
-  lg: 'max-w-2xl',
+  sm: 'sm:max-w-md',
+  md: 'sm:max-w-lg',
+  lg: 'sm:max-w-2xl',
 };
 
 export function ModalBody({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('px-6 py-5', className)} {...props} />;
+  return <div className={cn('px-4 py-4 sm:px-6 sm:py-5', className)} {...props} />;
 }
 
 export function ModalFooter({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn('flex justify-end gap-3 px-6 py-4 border-t border-border/40', className)}
+      className={cn('flex flex-wrap justify-end gap-2 sm:gap-3 px-4 py-3 sm:px-6 sm:py-4 border-t border-border/40', className)}
       {...props}
     />
   );
@@ -58,7 +58,7 @@ export function Modal({ onClose, title, size = 'lg', children, className }: Moda
         {/* Dialog — glass surface via CSS vars */}
         <motion.div
           className={cn(
-            'relative z-10 w-full rounded-[32px] border border-border/50 max-h-[90vh] overflow-y-auto glass-card',
+            'relative z-10 w-full rounded-2xl sm:rounded-[32px] border border-border/50 max-h-[90vh] overflow-y-auto glass-card',
             sizeMap[size],
             className,
           )}
@@ -69,9 +69,9 @@ export function Modal({ onClose, title, size = 'lg', children, className }: Moda
           transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           {title && (
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border/40">
+            <div className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 border-b border-border/40">
               <h2 className="text-base font-semibold text-foreground">{title}</h2>
-              <Button variant="ghost" size="icon-xs" onClick={onClose}>
+              <Button variant="ghost" size="icon-xs" onClick={onClose} className="min-w-11 min-h-11">
                 <X size={15} />
               </Button>
             </div>

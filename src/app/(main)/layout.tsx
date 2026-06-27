@@ -50,7 +50,7 @@ export default function DashboardLayout({
       <div
         style={{
           flex: 1,
-          height: "100vh",
+          height: "100dvh",
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",

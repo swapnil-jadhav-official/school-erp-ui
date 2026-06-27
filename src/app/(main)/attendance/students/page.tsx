@@ -240,8 +240,8 @@ export default function StudentAttendancePage() {
 
       {/* Stats + quick actions */}
       {hasStudents && (
-        <Div type="row" justify="between" align="center">
-          <Div type="row" gap="sm">
+        <Div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <Div type="row" gap="sm" wrap>
             <MiniStat label="Total" value={students.length} />
             <MiniStat label="Present" value={presentCount} color="green" />
             <MiniStat label="Absent" value={absentCount} color="red" />

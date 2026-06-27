@@ -358,8 +358,9 @@ export default function FeeSetupPage() {
                     </Div>
                   ) : (
                     <>
-                      {/* column headers */}
-                      <Div type="row" className="grid grid-cols-[2.5rem_1fr_9rem_8.5rem_2.5rem] items-center gap-x-3 px-5 pt-4 pb-2.5 border-b border-border/40">
+                      {/* column headers — overflow-x-auto for mobile */}
+                      <Div className="overflow-x-auto">
+                      <Div type="row" className="grid min-w-[480px] grid-cols-[2.5rem_1fr_9rem_8.5rem_2.5rem] items-center gap-x-3 px-5 pt-4 pb-2.5 border-b border-border/40">
                         <P size="xs" weight="semibold" color="muted" className="uppercase tracking-widest text-center">#</P>
                         <P size="xs" weight="semibold" color="muted" className="uppercase tracking-widest">Fee Type</P>
                         <P size="xs" weight="semibold" color="muted" className="uppercase tracking-widest">Schedule</P>
@@ -373,7 +374,7 @@ export default function FeeSetupPage() {
                           <Div
                             key={item.fee_type_id}
                             type="row"
-                            className="fee-structure-row group grid grid-cols-[2.5rem_1fr_9rem_8.5rem_2.5rem] items-center gap-x-3 px-5 py-3"
+                            className="fee-structure-row group grid min-w-[480px] grid-cols-[2.5rem_1fr_9rem_8.5rem_2.5rem] items-center gap-x-3 px-5 py-3"
                           >
                             <P size="xs" weight="medium" color="muted" className="text-center tabular-nums">{idx + 1}</P>
                             <Div type="col" className="min-w-0">
@@ -406,6 +407,7 @@ export default function FeeSetupPage() {
                           </Div>
                         ))}
                       </Div>
+                      </Div>{/* end overflow-x-auto */}
 
                       {dropZoneActive && (
                         <Div type="row" align="center" justify="center" className="fee-drop-indicator mx-5 mb-2 h-10 rounded-lg border border-dashed border-primary/40 bg-primary/2">

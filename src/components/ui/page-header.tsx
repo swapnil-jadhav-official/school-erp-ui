@@ -16,7 +16,7 @@ interface PageHeaderProps {
  */
 export function PageHeader({ title, subtitle, actions, illustration }: PageHeaderProps) {
   return (
-    <Div className="page-header">
+    <Div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
       <Div type="row" align="center" gap="md">
         {illustration && (
           <Image

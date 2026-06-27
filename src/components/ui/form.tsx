@@ -6,10 +6,10 @@ type InputWidth = 'full' | 'auto' | 'xs' | 'sm' | 'md';
 
 const widthMap: Record<InputWidth, string> = {
   full: 'w-full',
-  auto: 'w-auto',
-  xs: 'w-20',
-  sm: 'w-32',
-  md: 'w-48',
+  auto: 'w-auto max-w-full',
+  xs: 'w-20 max-w-full',
+  sm: 'w-32 max-w-full',
+  md: 'w-48 max-w-full',
 };
 
 /* ring-ring and border-primary both resolve to CSS vars that update per theme */

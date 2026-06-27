@@ -97,11 +97,20 @@ export function AppHeader() {
           </Button>
         </motion.div>
 
-        {/* Search trigger */}
+        {/* Search trigger — icon-only on mobile, full bar on sm+ */}
+        <Button
+          variant="ghost"
+          size="icon-sm"
+          onClick={() => setSearchOpen(true)}
+          className="sm:hidden text-muted-foreground rounded-lg min-w-[48px] min-h-[48px]"
+          aria-label="Search"
+        >
+          <Search size={17} />
+        </Button>
         <Button
           variant="outline"
           onClick={() => setSearchOpen(true)}
-          className="flex-1 max-w-[440px] justify-start gap-2 text-muted-foreground font-normal text-[13px] h-9 rounded-xl"
+          className="hidden sm:flex flex-1 max-w-[440px] justify-start gap-2 text-muted-foreground font-normal text-[13px] h-9 rounded-xl"
         >
           <Search size={13} className="shrink-0" />
           <span className="flex-1 text-left opacity-70">Search...</span>
